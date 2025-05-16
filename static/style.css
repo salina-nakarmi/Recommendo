@@ -39,7 +39,7 @@ body {
     cursor: pointer;
     border-radius: 10px;
     border: none;
-    background: #d9b99b;
+    background: #DBC2AC;
     font-size: 1em;        
     height: 2em;           
     width: auto;
@@ -90,7 +90,7 @@ body {
 }
 
 .controls button {
-    background: #d9b99b;
+    background: #DBC2AC;
     border: none;
     padding: 0.5em 1em;
     border-radius: 10px;
@@ -134,10 +134,11 @@ body {
 .info-text {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #d7bca6; /* beige/tan background */
+  background-color: #DBC2AC; /* beige/tan background */
   border-radius: 12px;
   margin-bottom: 1em;
   font-size: 1rem;
+  color: #000000;
 }
 
 .genres-container {
@@ -161,4 +162,40 @@ body {
 .genre-btn:hover {
   background-color: #7a6d68; /* lighter brown on hover */
 }
+
+/* Dark theme styles */
+.dark-theme {
+  background-color: #000000; /* dark background */
+  color: white;              /* light text */
+}
+
+/* Make sure buttons and other elements also adapt */
+.dark-theme button {
+  background-color: #DBC2AC;
+  color: black;
+  border: 1px solid white;
+}
+
+.dark-theme .search-box input {
+  background-color: #DBC2AC;
+  color: black;
+}
+
+.dark-theme .search-box input::placeholder {
+  color: #060404;
+}
+.dark-theme .site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    background: rgb(0, 0, 0);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: 25px; 
+    overflow: hidden; 
+}
+
+
 
