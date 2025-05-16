@@ -1,0 +1,16 @@
+<header class="site-header">
+    <div class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"></div>
+    
+    <div class="controls">
+      <button class="theme-toggle">Theme <i class="fas fa-moon"></i> </button>
+      <button class="menu-toggle">☰</button>
+    </div>
+  </header>
+  <img src="{{ url_for('static', filename='book1.jpg') }}" class="hero-image">
+
+  <div class="search-bar">
+    <div class="search-box">
+    <input type="text" placeholder="Search Title or Author">
+    <span class="search-icon"><i class="fas fa-search"></i></span>
+  </div>
+</div>
