@@ -10,5 +10,9 @@ def home():
     ]
     return render_template('index.html', books=books)
 
+@app.route('/genre')
+def genre():
+    return render_template('chooseGenre.html')
+
 if __name__ == '__main__':
     app.run(debug=True)
