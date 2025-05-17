@@ -288,3 +288,44 @@ form {
 .content form .container2 {
     width: 335px;
 }
+
+.search-form {
+    display: inline-block;
+  }
+  
+  .search-form input[type="text"] {
+    background-color: #a0522d; /* brown inner background */
+    color: white;
+    padding: 10px;
+    width: 280px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  
+  .search-form input::placeholder {
+    color: #f0e6dc; /* lighter placeholder text for contrast */
+  }
+  
+  .search-form button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .search-form button:hover {
+    background-color: #555;
+  }
+
+  /* Centering container */
+.center-container {
+    display: flex;
+    justify-content: center;  /* center horizontally */
+    align-items: center;      /* center vertically */
+    height: 10vh;            /* full viewport height */
+  }

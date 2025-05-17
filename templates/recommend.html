@@ -1,1 +1,19 @@
 {%extends "base.html"%}
+{% block title %}genre{% endblock %}
+
+{%block content%}
+<header>
+<h1 style="text-align: center;"> Discover the Book you want to read next <h1>
+</header>
+<div>
+    <p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
+        Enter the name of the book that you have read,<br>
+        and our algorithm will help you find similar books of your interest.
+      </p>
+<div>
+<div class= "center-container">
+    <form class="search-form">
+        <input type="text" name="query" placeholder="Enter book name...">
+        <button type="submit">Search</button>
+      </form>    
+{% endblock %}
