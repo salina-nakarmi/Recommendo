@@ -14,5 +14,9 @@ def home():
 def genre():
     return render_template('chooseGenre.html')
 
+@app.route("/searchbook")
+def book():
+    return render_template("recommend.html")
+
 if __name__ == '__main__':
     app.run(debug=True)
