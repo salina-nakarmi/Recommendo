@@ -6,6 +6,7 @@
   <title>{% block title %}Book Recommender{% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" href="{{ url_for('static', filename='../static/logo.png') }}" type="image/png">
 
 </head>
 <body>
@@ -15,13 +16,34 @@
     {% block content %}{% endblock %}
   </main>
   {% include 'footer.html' %}
+  {% include 'auth.html' %}
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
     const themeBtn = document.querySelector('.theme-toggle');
-    themeBtn.addEventListener('click', () => {
-      document.body.classList.toggle('dark-theme');
+    if (themeBtn) {
+      themeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-theme');
+      });
+    }
+
+  const showAuth = id => document.getElementById(id).style.display = 'block';
+  const closeAuth = id => document.getElementById(id).style.display = 'none';
+
+  document.getElementById('loginBtn')?.addEventListener('click', () => showAuth('login'));
+  document.getElementById('signupBtn')?.addEventListener('click', () => showAuth('signup'));
+
+  document.querySelectorAll('.close').forEach(btn => {
+    btn.onclick = () => closeAuth(btn.getAttribute('data-close'));
+  });
+
+  window.onclick = e => {
+    ['login', 'signup'].forEach(id => {
+      if (e.target == document.getElementById(id)) {
+        closeAuth(id);
+      }
     });
+  }
   });
 </script>
 
