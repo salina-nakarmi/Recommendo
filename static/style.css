@@ -292,3 +292,7 @@ form {
 .content form .container2 {
     width: 335px;
 }
+
+.dark-theme .content {
+    background-color: slategrey;
+}
