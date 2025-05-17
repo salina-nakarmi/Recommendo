@@ -279,3 +279,12 @@ form {
         opacity: 1;
     }
 }
+
+.content form {
+    border: none;
+    padding: 10px;
+}
+
+.content form .container2 {
+    width: 335px;
+}
