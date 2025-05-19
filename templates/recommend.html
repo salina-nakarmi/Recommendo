@@ -1,19 +1,32 @@
-{%extends "base.html"%}
-{% block title %}genre{% endblock %}
+{% extends 'base.html' %}
+{% block title %}Recommend Book{% endblock %}
 
 {%block content%}
 <header>
-<h1 style="text-align: center;"> Discover the Book you want to read next <h1>
+<h1 style="text-align: center; margin-top:3em;"> Discover the Book you want to read next <h1>
 </header>
 <div>
-    <p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
-        Enter the name of the book that you have read,<br>
-        and our algorithm will help you find similar books of your interest.
-      </p>
+<p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
+Enter the name of the book that you have read
+</p>
 <div>
 <div class= "center-container">
-    <form class="search-form">
-        <input type="text" name="query" placeholder="Enter book name...">
-        <button type="submit">Search</button>
-      </form>    
+<form class="search-form", method ="POST">
+<input type="text" name="query" placeholder="Enter book name...">
+<button type="submit">Search</button>
+</form>
+</div>
+
+<p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;"> If you found Rich Dad Poor Dad by Robert Kiyosaki then<br>
+  you might find these book interesting</p>
+
+  <div class="booksection">
+    <h2>Recommended Book</h2>
+    <div class="bookgrid">
+      {% for _ in range(3) %}
+      <div class="book placeholder"></div>
+      {% endfor %}
+    </div>
+  </div>
 {% endblock %}
+

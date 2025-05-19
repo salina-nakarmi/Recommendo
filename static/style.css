@@ -289,43 +289,73 @@ form {
     width: 335px;
 }
 
-.search-form {
-    display: inline-block;
-  }
-  
-  .search-form input[type="text"] {
-    background-color: #a0522d; /* brown inner background */
-    color: white;
-    padding: 10px;
-    width: 280px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-  
-  .search-form input::placeholder {
-    color: #f0e6dc; /* lighter placeholder text for contrast */
-  }
-  
-  .search-form button {
-    padding: 10px 20px;
-    margin-left: 10px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-  }
-  
-  .search-form button:hover {
-    background-color: #555;
-  }
 
-  /* Centering container */
+.search-form {
+  display: inline-block;
+}
+
+.search-form input[type="text"] {
+  background-color:#DBC2AC; /* brown inner background */
+  color: black;
+  padding: 10px;
+  width: 280px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.search-form input::placeholder {
+  color: black; /* lighter placeholder text for contrast */
+}
+
+.search-form button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  background-color: #DBC2AC;;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #DBC2AC;
+}
+
+/* Centering container */
 .center-container {
-    display: flex;
-    justify-content: center;  /* center horizontally */
-    align-items: center;      /* center vertically */
-    height: 10vh;            /* full viewport height */
-  }
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  align-items: center;      /* center vertically */
+  height: 10vh;            /* full viewport height */
+}
+
+
+.book.placeholder {
+    width: 70%;
+    aspect-ratio: 3/4;
+    background: #ccc;
+    border-radius: 20px;
+    text-align: center;
+    justify-items:center;
+}
+
+.booksection {
+    text-align: center;
+    padding: 1em 2em;
+    padding-bottom:4em;
+}
+
+
+
+
+.bookgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 28em;
+    text-align: center;
+    justify-items: center; /* Center grid items horizontally */
+    width: 100%; /* Ensure grid takes up full width of its container */
+}
+
