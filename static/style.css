@@ -223,7 +223,7 @@ form {
     height: 450px;
     position: relative;
 
-    animation: popup 0.3s ease-out;
+    animation: popup 0.7s ease-out;
 
     display: flex;
     justify-content: center;
@@ -266,13 +266,17 @@ form {
     justify-content: center;
     width: 600px;
     height: 400px;
-    border-right: 2px double #5a4d48;
+    border-right: 3px ridge #5a4d48;
 }
 
 @keyframes popup {
     0% {
         transform: scale(0.7);
         opacity: 0;
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 1;
     }
     100% {
         transform: scale(1);
@@ -289,6 +293,7 @@ form {
     width: 335px;
 }
 
+<<<<<<< HEAD
 
 .search-form {
   display: inline-block;
@@ -359,3 +364,130 @@ form {
     width: 100%; /* Ensure grid takes up full width of its container */
 }
 
+=======
+.dark-theme .content {
+    background-color: slategrey;
+}
+/* Toggle Button */
+
+
+/* Close button inside sidebar */
+#close-sidebar {
+  position: absolute; 
+  top: 8px;             /* distance from the panel’s top edge  */
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #5a3e21; 
+  float: right;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Sidebar styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 260px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 48px;
+  background: linear-gradient(
+        to bottom,
+        rgba(238, 211, 165, 0.95) 0%,
+        rgba(234, 231, 226, 0.88) 80%
+    );
+  backdrop-filter: blur(18px);            /* Slight blur for modern feel */
+  color: white;
+  padding: 24px 16px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1200;
+  box-shadow: -4px 0 15px rgba(0,0,0,.15);   /* new */
+}
+
+.sidebar.open {
+  transform: translateX(0);
+}
+.dark-theme .sidebar {
+    background-color: slategrey;
+}
+
+/* Optional: Style the links inside */
+.sidebar ul {
+  flex: 1 1 auto;
+  list-style: none;
+  padding: 100px 0 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin: 20px 0;
+  padding: 10px 14px;
+  background: rgba(255,255,255,0.35); 
+  border: 1px solid #5a3e21; /* subtle contrast */
+  border-radius: 8px;                   /* curved corners */
+  list-style: none;
+  position: relative;
+  left: 16px;
+  opacity: 0;
+  height: 20px;          /* ← the measured height */
+  line-height: 20px;     /* keeps the one-line text centered */
+  transform: translateX(16px);
+  transition: transform .45s ease, opacity .45s ease;                 /* hide bullet */
+}
+
+.sidebar ul li a {
+  color: #331c03;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: block;
+  font-weight: 350;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;     /* space between icon and text */
+}
+
+/* END position –- sidebar has .open */
+.sidebar.open ul li { 
+  transform: translateX(0);
+  opacity: 1;
+}
+.sidebar ul li:nth-child(1) { transition-delay:   0ms; }
+.sidebar ul li:nth-child(2) { transition-delay:  90ms; }
+.sidebar ul li:nth-child(3) { transition-delay: 180ms; }
+.sidebar ul li:nth-child(4) { transition-delay: 270ms; }
+.sidebar ul li:nth-child(5) { transition-delay: 360ms; }
+
+@keyframes fadeSlide {
+    from {opacity:0; transform: translateX(12px);}
+    to   {opacity:1; transform: translateX(0);}
+}
+/* Logo / picture above the menu */
+.sidebar-logo{
+  width: 80px;          /* adjust to taste */
+  height: 80px;         /* keep square, or omit for auto height */
+  object-fit: cover;    /* keep aspect without distortion        */
+  border-radius: 50%;   /* makes it a circle – remove if square  */
+  position: relative;
+  top: 80px; 
+  margin: 0 0 18px;     /* bottom gap before the first box       */
+}
+.sidebar-footer{
+  font-family: "Snell Roundhand", "Great Vibes", cursive;
+  font-weight: 2000;      /* optional – a bit bolder */
+  text-shadow: 0 0 1.5px currentColor;
+  text-decoration: underline;          
+  text-underline-offset: 2px;
+  color: #5a3e21;        /* dark-brown like your theme */
+  text-align: center;    /* center horizontally */
+  padding: 12px 0 18px;
+  margin-bottom: 24px;  /* space above & below */
+  letter-spacing: 1.5px; /* subtle refinement */
+}
+>>>>>>> main
