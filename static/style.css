@@ -293,8 +293,6 @@ form {
     width: 335px;
 }
 
-<<<<<<< HEAD
-
 .search-form {
   display: inline-block;
 }
@@ -352,9 +350,6 @@ form {
     padding-bottom:4em;
 }
 
-
-
-
 .bookgrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
@@ -364,7 +359,6 @@ form {
     width: 100%; /* Ensure grid takes up full width of its container */
 }
 
-=======
 .dark-theme .content {
     background-color: slategrey;
 }
@@ -490,4 +484,3 @@ form {
   margin-bottom: 24px;  /* space above & below */
   letter-spacing: 1.5px; /* subtle refinement */
 }
->>>>>>> main
