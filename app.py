@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template , request
 
 app = Flask(__name__)
 
@@ -13,6 +13,13 @@ def home():
 @app.route('/genre')
 def genre():
     return render_template('chooseGenre.html')
+
+@app.route("/searchbook", methods= ["GET", "POST"])
+def book():
+    return render_template("recommend.html")
+
+
+
 
 if __name__ == '__main__':
     app.run(debug=True)
