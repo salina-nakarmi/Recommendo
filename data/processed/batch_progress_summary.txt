@@ -1,0 +1,1 @@
+Batch 1: {'batch_number': 1, 'processed_books': 1035, 'timestamp': '2025-06-03T07:59:29.596557', 'books_with_genres': 1035, 'api_success': 1005, 'fallback_used': 30}

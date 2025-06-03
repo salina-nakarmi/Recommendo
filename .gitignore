@@ -1,6 +1,28 @@
-mendoenv/
+# Data files
+data/raw/*.csv
+data/processed/*.csv
+data/models/*.pkl
+
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+
+# Flask
 instance/
-.env
+.webassets-cache
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
