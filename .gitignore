@@ -4,3 +4,7 @@ __pycache__/
 instance/
 .env
 .DS_Store
+
+# Ignore raw and processed data
+data/raw/
+data/processed/
