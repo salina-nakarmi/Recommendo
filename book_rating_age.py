@@ -19,7 +19,10 @@ ratings = pd.read_csv('data/raw/Ratings.csv')
 users = pd.read_csv('data/raw/Users.csv')
         
 print(f"Loaded {len(books)} books, {len(ratings)} ratings, {len(users)} users")
-        
+
+#drop two columns of images.
+books = books.drop(columns=['Image-URL-S', 'Image-URL-L'])
+
 # Display basic info about ratings
 print(f"\nRatings dataframe info:")
 print(f"Columns: {list(ratings.columns)}")
@@ -63,23 +66,39 @@ ratings_filtered_by_isbn_with_age = ratings_with_age[
 ]
 print(f"Filtered ratings with age shape: {ratings_filtered_by_isbn_with_age.shape}")
         
-# Calculate average user age per ISBN
-print("Calculating average user age per ISBN...")
-average_age_per_filtered_isbn = ratings_filtered_by_isbn_with_age.groupby('ISBN')['Age'].mean().round(2).reset_index(name='Av-User-Age')
-        
-# Create final merged dataframe
-print("rating_age")
-rating_age = pd.merge(
-    average_ratings_filtered, 
-    average_age_per_filtered_isbn, 
-    on='ISBN', 
-    how='left'
+# Create age groups
+print("Creating age groups...")
+age_bins = [0, 17, 24, 34, 44, 54, 64, 120]
+age_labels = ['<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
+
+ratings_filtered_by_isbn_with_age['Age-Group'] = pd.cut(
+    ratings_filtered_by_isbn_with_age['Age'],
+    bins=age_bins,
+    labels=age_labels,
+    right=False
 )
+
+# Find the dominant age group for each ISBN
+print("Finding dominant age group per ISBN...")
+age_group_counts = ratings_filtered_by_isbn_with_age.groupby(['ISBN', 'Age-Group']).size().reset_index(name='User-Count')
+
+# Get the age group with maximum users for each ISBN
+dominant_age_group = age_group_counts.loc[age_group_counts.groupby('ISBN')['User-Count'].idxmax()]
+dominant_age_group = dominant_age_group[['ISBN', 'Age-Group']].rename(columns={'Age-Group': 'Dominant-Age-Group'})
+
+print(f"Dominant age groups shape: {dominant_age_group.shape}")
+print(f"Sample dominant age groups:")
+print(dominant_age_group.head())
+
+# Merge with average ratings
+print("Merging with average ratings...")
+final_ratings = pd.merge(average_ratings_filtered, dominant_age_group, on='ISBN', how='inner')
+print(f"Final ratings with age groups shape: {final_ratings.shape}")
         
 print("book_rating_age")
 book_rating_age = pd.merge(
     books,
-    rating_age,
+    final_ratings,
     on='ISBN',
     how='inner'
 )
@@ -88,9 +107,10 @@ print(f"Columns: {list(book_rating_age.columns)}")
 print(f"Shape: {book_rating_age.shape}")
 print(f"Sample data:")
 print(book_rating_age.head())
-        
+
 # Save processed data
 print(f"\nSaving processed data to {'data/processed/'}...")
+
 book_rating_age.to_csv('data/processed/book_rating_age.csv', index=False)
 print("Data preprocessing completed successfully!")
         
