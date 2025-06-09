@@ -5,6 +5,10 @@ instance/
 .env
 .DS_Store
 
-# Ignore raw and processed data
-data/raw/
-data/processed/
+# Ignore all contents inside these folders
+data/raw/*
+data/processed/*
+
+# But don't ignore the actual folders
+!data/raw/.gitkeep
+!data/processed/.gitkeep
