@@ -68,7 +68,7 @@ print(f"Filtered ratings with age shape: {ratings_filtered_by_isbn_with_age.shap
         
 # Create age groups
 print("Creating age groups...")
-age_bins = [0, 17, 24, 34, 44, 54, 64, 120]
+age_bins = [5, 18, 25, 35, 45, 55, 65, 121]
 age_labels = ['<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
 
 ratings_filtered_by_isbn_with_age['Age-Group'] = pd.cut(
