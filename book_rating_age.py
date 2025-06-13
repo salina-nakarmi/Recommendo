@@ -48,7 +48,7 @@ print(f"Merged ratings shape: {average_ratings.shape}")
 # Filter to keep top 24000 books by rating count
 print("Filtering books by rating frequency...")
 average_ratings_sorted = average_ratings.sort_values('Rating-Count', ascending=False)
-average_ratings_filtered = average_ratings_sorted.iloc[:11111]
+average_ratings_filtered = average_ratings_sorted.iloc[:15000]
 print(f"Filtered ratings shape: {average_ratings_filtered.shape}")
         
 # Prepare user age data
