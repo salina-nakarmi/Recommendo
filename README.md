@@ -33,6 +33,11 @@ You can directly use the processed file without running any preprocessing script
 
 you can store it under this 'data/final_processed.csv' 
 
+The dataset was cleaned for the use of genre in frontend:
+[clean_genre.csv](https://drive.google.com/file/d/18ChS5oIPcshihKHjZjleWvL31jKcE52g/view?usp=sharing)
+
+you can store it under this 'data/clean_genre.csv' 
+
 This CSV includes:
 - ISBN, Book Title, Author, year of Publication, Publisher, Book-cover img
 - Average Book Rating
@@ -84,4 +89,5 @@ We enriched them by fetching with batch processing:
 
 Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1DFBB740MgnWUP-pkftQ7G4rMxWIcTqBt?usp=sharing)
 
-
+## Data Cleaning Code
+-Using fuzzywuzzy via Google Collab- [Genre Data clean](https://colab.research.google.com/drive/16iOemQ2ZHeVKQzttHnXBbzkeNXUFAfp9?usp=sharing)
