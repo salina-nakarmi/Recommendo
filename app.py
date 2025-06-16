@@ -1,6 +1,9 @@
 from flask import Flask, render_template , request
 
+
 app = Flask(__name__)
+
+
 
 @app.route('/')
 def home():
@@ -10,7 +13,7 @@ def home():
     ]
     return render_template('index.html', books=books)
 
-@app.route('/genre')
+@app.route('/choose_genre')
 def genre():
     return render_template('chooseGenre.html')
 
