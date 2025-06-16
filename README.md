@@ -9,23 +9,35 @@
 5. `python app.py`
 
 
-## Datasetup and Execution
-1. **Download Dataset**
+## 📘 Book Recommendation Dataset - Enhanced Version
 
-   Download the dataset from Kaggle:  
-   👉 [Book Recommendation Dataset on Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+This project uses the <a href="https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset" target="_blank">Book Recommendation Dataset</a> from Kaggle and enhances it by:
+- Preprocessing the raw data (cleaning, merging, and filtering)
+- Grouping users by age segments
+- Extracting genres and descriptions using the Google Books API
 
-2. **Organize Files**
+---
 
-After downloading, extract and place the following 3 CSV files into the `data/raw/` directory of this repository:
+## ✅ Use the Already Processed Dataset
 
-- `Users.csv`
-- `Books.csv`
-- `Ratings.csv`
+You can directly use the processed file without running any preprocessing scripts:
 
-3. **Run the Script**
+📁 [data/final_processed.csv](./data/final_processed.csv)
 
-Once the data is in place, run the script below to begin analysis:
+This CSV includes:
+- ISBN, Book Title, Author, Publisher
+- Average Book Rating
+- Rating Count (number of ratings received)
+- Dominant Age Group of raters
 
-```bash
-python book_rating_age.py
+---
+
+## 🔧 How the Data Was Processed (If You Want to Recreate It)
+
+### 1. Download Raw Data
+
+Get the original dataset from Kaggle:  
+👉 [Book Recommendation Dataset on Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+
+Extract and place the following files in the `data/raw/` directory:
+
