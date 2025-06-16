@@ -1,22 +1,18 @@
 {% extends 'base.html' %}
 
-{% block title %}genre{% endblock %}
+{% block title %}Genre Selection{% endblock %}
 
-{%block content%}
+{% block content %}
 <div class="section">
   <p class="info-text">Choose 3 or 4 genres you like</p>
   <div class="genres-container">
-    {% for genre in [
-      'Action', 'Adventure', 'Comedy', 'Romance', 'Supernatural', 'Finance', 'Biography',
-      'Mystery', 'Thriller', 'Horror', 'Science Fiction', 'Fantasy', 'Historical',
-      'Non-fiction', 'Self-help', 'Poetry', 'Drama', 'Crime', 'Classic', 'Young Adult',
-      'Children`s', 'Dystopian', 'Memoir', 'Spirituality', 'Travel', 'Graphic Novel',
-      'Satire', 'Philosophy', 'Paranormal', 'Essays', 'War', 'Western',
-      'Cookbook', 'LGBT+', 'True Crime', 'Music', 'Sports', 'Religion', 'Psychological',
-      'Magical Realism', 'Urban Fiction', 'Political', 'Environmental'
-    ] %}
-      <button class="genre-btn">{{ genre }}</button>
-    {% endfor %}
+    
+      {% for genre in genres %}
+        <li>
+          <button class="genre-btn">{{ genre }}</button>
+        </li>
+      {% endfor %}
+    
   </div>
 </div>
 {% endblock %}
