@@ -1,30 +1,37 @@
 # Book Recommendation System
 
 ## Setup
-1. Clone repo:
-   `git clone https://github.com/salina-nakarmi/recommendo.git`
-2. `python3 -m venv mendoenv`
-3. `source mendoenv/bin/activate` (or `venv\Scripts\activate` on Windows)
-4. `pip install -r requirements.txt`
-5. `python app.py`
+```bash
+git clone https://github.com/salina-nakarmi/recommendo.git
+cd recommendo
+python3 -m venv mendoenv
 
+# Linux/Mac
+source mendoenv/bin/activate
 
-## 📘 Book Recommendation Dataset - Enhanced Version
+# Windows
+.\mendoenv\Scripts\activate
 
-This project uses the This project uses the [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset) from Kaggle and enhances it by:  
+pip install -r requirements.txt
+python app.py
+```
+
+##  Book Recommendation Dataset - Enhanced Version
+
+This project uses the [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset) from Kaggle and enhances it by:  
 - Preprocessing the raw data (cleaning, merging, and filtering)
 - Grouping users by age segments
 - Extracting genres and descriptions using the Google Books API
 
 ---
 
-## ✅ Use the Already Processed Dataset
+##  Use the Already Processed Dataset
 
 You can directly use the processed file without running any preprocessing scripts:
 
 [final_processed.csv](https://drive.google.com/file/d/1oia6BrTSuEU4KX9UFMO7j5aZTWKC-jKj/view?usp=sharing)
 
-'data/final_processed.csv' you can store it under this file.
+you can store it under this 'data/final_processed.csv' 
 
 This CSV includes:
 - ISBN, Book Title, Author, year of Publication, Publisher, Book-cover img
@@ -36,12 +43,12 @@ This CSV includes:
 
 ---
 
-## 🔧 How the Data Was Processed (If You Want to Recreate It)
+##  How the Data Was Processed (If You Want to Recreate It)
 
 ### 1. Download Raw Data
 
 Get the original dataset from Kaggle:  
-👉 [Book Recommendation Dataset on Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
+ [Book Recommendation Dataset on Kaggle](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset)
 
 Extract and place the following files in the `data/raw/` directory:
 - Books.csv
@@ -75,6 +82,6 @@ We enriched them by fetching with batch processing:
 
 - Book Descriptions
 
-Using Google Books API via Google Colab-[genre and description extractor](https://colab.research.google.com/drive/1yDquOOx65x_G-aTTZhtWl2W6ANQOlcFQ?usp=sharing)
+Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1yDquOOx65x_G-aTTZhtWl2W6ANQOlcFQ?usp=sharing)
 
 
