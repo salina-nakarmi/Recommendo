@@ -82,6 +82,6 @@ We enriched them by fetching with batch processing:
 
 - Book Descriptions
 
-Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1UFG6VGFsO1mRBb8x1B1OP4XuHRDKo93G?usp=sharing)
+Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1DFBB740MgnWUP-pkftQ7G4rMxWIcTqBt?usp=sharing)
 
 
