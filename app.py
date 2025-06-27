@@ -21,5 +21,10 @@ def book():
 
 
 
+@app.route('/book/<book_id>')
+def show_book(book_id):
+    # You'd fetch the book and its recommendations here
+    return render_template('info.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -293,10 +293,10 @@ form {
     width: 335px;
 }
 
-<<<<<<< HEAD
 
 .search-form {
   display: inline-block;
+  border: none;
 }
 
 .search-form input[type="text"] {
@@ -364,7 +364,6 @@ form {
     width: 100%; /* Ensure grid takes up full width of its container */
 }
 
-=======
 .dark-theme .content {
     background-color: slategrey;
 }
@@ -490,4 +489,4 @@ form {
   margin-bottom: 24px;  /* space above & below */
   letter-spacing: 1.5px; /* subtle refinement */
 }
->>>>>>> main
+

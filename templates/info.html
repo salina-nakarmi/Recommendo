@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Book Info{% endblock %}
+
+{% block content %}
+
+<!-- Book Details Section -->
+<div class="section" style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; padding-top: 3em; max-width: 900px; margin: auto;">
+  <!-- Book Image -->
+  <div style="flex: 1; min-width: 320px; max-width: 350px; text-align: center;">
+    <img src="{{ url_for('static', filename='book1.jpg') }}" alt="Book Cover" style="width: 100%;height: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-left: 3em">
+  </div>
+
+  <!-- Book Info -->
+   
+  <div style="flex: 2; min-width: 400px;">
+    <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 0.5em; margin-top: 0.01em; margin-left: 1.5em">Book Title Here</h2>
+    <p style="margin-left: 2.8em; "><strong>Author:</strong> Author Name</p>
+    <p style="margin-left: 2.8em; "><strong>Genre:</strong> Genre Info</p>
+    <p style="margin-left: 2.8em; "><strong>Language:</strong> English</p>
+    <p style="margin-left: 2.8em; "><strong>Publisher:</strong> Publisher Name</p>
+    <p style="margin-left: 2.8em; "><strong>Publication Year:</strong> 2023</p>
+    <p style="margin-left: 2.8em; "><strong>ISBN:</strong> 978-3-16-148410-0</p>
+    <p style="margin-left: 2.8em; "><strong>Average Rating:</strong> 4.3 / 5</p>
+  </div>
+</div>
+
+<!-- Book Description -->
+<div class="section" style="max-width: 900px; margin: 2em auto; margin: right 1.5em">
+  <h3 style="font-weight: bold;margin-left: 3em">Description</h3>
+  <p style="line-height: 1.6; color: #444; margin-left: 3.38em">
+    This is a placeholder for the book’s description. It will talk about what the book is about, its themes, and why a reader might enjoy it. 
+  </p>
+</div>
+
+
+<!-- Similar Books Section -->
+<div class="section booksection" style=" padding: 2em;">
+  <h3 style="text-align: center; margin-top: 2em;">You Might Also Like</h3>
+
+  <div style="
+      display: flex;
+      overflow-x: auto;
+      gap: 5em;
+      padding-bottom: 1em;
+      scroll-snap-type: x mandatory;
+      padding-left: 11em;
+  ">
+    {% for i in range(5) %}
+    <div style="
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 150px;
+        background: white;
+        border-radius: 12px;
+        padding: 10px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        text-align: center;
+    ">
+      <img src="{{ url_for('static', filename='book1.jpg') }}"
+           alt="Recommended Book"
+           style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; ">
+      <p style="margin-top: 0.5em; font-weight: bold; font-size: 0.9rem; margin-right: 1.8em;">Recommended Book {{ i+1 }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}
+
+
+
+
