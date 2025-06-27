@@ -1,6 +1,10 @@
 from flask import Flask, render_template , request
+from genre_load import load_dataset, get_unique_genre
 
 app = Flask(__name__)
+
+df = load_dataset()
+unique_genres = get_unique_genre(df)
 
 @app.route('/')
 def home():
@@ -10,9 +14,9 @@ def home():
     ]
     return render_template('index.html', books=books)
 
-@app.route('/genre')
+@app.route('/choose_genre')
 def genre():
-    return render_template('chooseGenre.html')
+    return render_template('chooseGenre.html', genres=unique_genres)
 
 @app.route("/searchbook", methods= ["GET", "POST"])
 def book():

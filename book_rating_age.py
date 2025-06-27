@@ -48,7 +48,7 @@ print(f"Merged ratings shape: {average_ratings.shape}")
 # Filter to keep top 24000 books by rating count
 print("Filtering books by rating frequency...")
 average_ratings_sorted = average_ratings.sort_values('Rating-Count', ascending=False)
-average_ratings_filtered = average_ratings_sorted.iloc[:24000]
+average_ratings_filtered = average_ratings_sorted.iloc[:15000]
 print(f"Filtered ratings shape: {average_ratings_filtered.shape}")
         
 # Prepare user age data
@@ -68,7 +68,7 @@ print(f"Filtered ratings with age shape: {ratings_filtered_by_isbn_with_age.shap
         
 # Create age groups
 print("Creating age groups...")
-age_bins = [0, 17, 24, 34, 44, 54, 64, 120]
+age_bins = [5, 18, 25, 35, 45, 55, 65, 121]
 age_labels = ['<18', '18-24', '25-34', '35-44', '45-54', '55-64', '65+']
 
 ratings_filtered_by_isbn_with_age['Age-Group'] = pd.cut(
