@@ -12,3 +12,5 @@ data/processed/*
 # But don't ignore the actual folders
 !data/raw/.gitkeep
 !data/processed/.gitkeep
+
+model/pkl/
