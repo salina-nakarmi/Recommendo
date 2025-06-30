@@ -1,6 +1,10 @@
 <header class="site-header">
     <div class="left-section">
-    <div class="logo"><img src="{{ url_for('static', filename='logo.png') }}" alt="Logo"></div>
+    <div class="logo">
+    <a href="{{ url_for('home') }}" style="text-decoration: none;">
+    <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+    </a>
+    </div>
     <div class = "navigate">
         <button class="bookshelf">My BookShelf</button>
         <button class ="about">About</button>
@@ -15,9 +19,45 @@
   </header>
   <img src="{{ url_for('static', filename='book1.jpg') }}" class="hero-image">
 
-  <div class="search-bar">
-    <div class="search-box">
-    <input type="text" placeholder="Search Title or Author">
-    <span class="search-icon"><i class="fas fa-search"></i></span>
+<form class="search-bar" method="POST" action="{{ url_for('book') }}" style="
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    border: none;
+">
+  <div class="search-box" style="
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+  ">
+    <input
+      type="text"
+      name="query"
+      placeholder="Search Title or Author"
+      required
+      style="
+          width: 100%;
+          padding: 0.8em 2em 0.8em 2.5em;
+          border-radius: 20px;
+          border: none;
+          background: #DBC2AC;
+          font-size: 1em;
+          box-sizing: border-box;
+          font-family: 'Arial', sans-serif;
+      "
+    />
+    <button type="submit" class="search-icon" style="
+        position: absolute;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+        font-size: 1.2em;
+        color: #070707;
+        background: none;
+        border: none;
+        cursor: pointer;
+    ">
+      <i class="fas fa-search"></i>
+    </button>
   </div>
-</div>
+</form>
