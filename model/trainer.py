@@ -2,6 +2,9 @@ import pandas as pd
 import pickle
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.feature_extraction.text import TfidfVectorizer
+import os
+
+os.makedirs("./pkl", exist_ok=True)
 
 df = pd.read_csv("../data/final_processed.csv")
 
