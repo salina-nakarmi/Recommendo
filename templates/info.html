@@ -8,45 +8,47 @@
 <div class="section" style="display: flex; flex-wrap: wrap; gap: 2em; justify-content: center; padding-top: 3em; max-width: 900px; margin: auto;">
   <!-- Book Image -->
   <div style="flex: 1; min-width: 320px; max-width: 350px; text-align: center;">
-    <img src="{{ url_for('static', filename='book1.jpg') }}" alt="Book Cover" style="width: 100%;height: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-left: 3em">
+    <img src="{{ books[0]['Image-URL-M'] or url_for('static', filename='default_cover.jpg') }}"
+         alt="{{ books[0]['Book-Title'] }}"
+         style="width: 100%; height: 450px; object-fit: cover; border-radius: 16px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin-left: 3em">
   </div>
 
   <!-- Book Info -->
-   
   <div style="flex: 2; min-width: 400px;">
-    <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 0.5em; margin-top: 0.01em; margin-left: 1.5em">Book Title Here</h2>
-    <p style="margin-left: 2.8em; "><strong>Author:</strong> Author Name</p>
-    <p style="margin-left: 2.8em; "><strong>Genre:</strong> Genre Info</p>
-    <p style="margin-left: 2.8em; "><strong>Language:</strong> English</p>
-    <p style="margin-left: 2.8em; "><strong>Publisher:</strong> Publisher Name</p>
-    <p style="margin-left: 2.8em; "><strong>Publication Year:</strong> 2023</p>
-    <p style="margin-left: 2.8em; "><strong>ISBN:</strong> 978-3-16-148410-0</p>
-    <p style="margin-left: 2.8em; "><strong>Average Rating:</strong> 4.3 / 5</p>
+    <h2 style="font-size: 2em; font-weight: bold; margin-bottom: 0.5em; margin-top: 0.01em; margin-left: 1.5em;">
+      {{ books[0]['Book-Title'] }}
+    </h2>
+    <p style="margin-left: 2.8em;"><strong>Author:</strong> {{ books[0]['Book-Author'] }}</p>
+    <p style="margin-left: 2.8em;"><strong>Genre:</strong> {{ books[0].get('Genre', 'N/A') }}</p>
+    <p style="margin-left: 2.8em;"><strong>Language:</strong> {{ books[0].get('Language', 'English') }}</p>
+    <p style="margin-left: 2.8em;"><strong>Publisher:</strong> {{ books[0].get('Publisher', 'N/A') }}</p>
+    <p style="margin-left: 2.8em;"><strong>Publication Year:</strong> {{ books[0].get('Year-Of-Publication', 'N/A') }}</p>
+    <p style="margin-left: 2.8em;"><strong>ISBN:</strong> {{ books[0]['ISBN'] }}</p>
+    <p style="margin-left: 2.8em;"><strong>Average Rating:</strong> {{ books[0].get('Average-Book-Rating', 'N/A') }} / 5</p>
   </div>
 </div>
 
 <!-- Book Description -->
-<div class="section" style="max-width: 900px; margin: 2em auto; margin: right 1.5em">
-  <h3 style="font-weight: bold;margin-left: 3em">Description</h3>
-  <p style="line-height: 1.6; color: #444; margin-left: 3.38em">
-    This is a placeholder for the book’s description. It will talk about what the book is about, its themes, and why a reader might enjoy it. 
+<div class="section" style="max-width: 900px; margin: 2em auto; margin-right: 1.5em;">
+  <h3 style="font-weight: bold; margin-left: 3em;">Description</h3>
+  <p style="line-height: 1.6; color: #444; margin-left: 3.38em;">
+    {{ books[0].get('Description', 'No description available.') }}
   </p>
 </div>
 
-
 <!-- Similar Books Section -->
-<div class="section booksection" style=" padding: 2em;">
+<div class="section booksection" style="padding: 2em;">
   <h3 style="text-align: center; margin-top: 2em;">You Might Also Like</h3>
 
   <div style="
       display: flex;
       overflow-x: auto;
-      gap: 5em;
+      gap: 3em;
       padding-bottom: 1em;
       scroll-snap-type: x mandatory;
-      padding-left: 11em;
+      padding-left: 3em;
   ">
-    {% for i in range(5) %}
+    {% for book in books[1:] %}
     <div style="
         flex: 0 0 auto;
         scroll-snap-align: start;
@@ -57,18 +59,16 @@
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
         text-align: center;
     ">
-      <img src="{{ url_for('static', filename='book1.jpg') }}"
-           alt="Recommended Book"
-           style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; ">
-      <p style="margin-top: 0.5em; font-weight: bold; font-size: 0.9rem; margin-right: 1.8em;">Recommended Book {{ i+1 }}</p>
+      <a href="{{ url_for('show_book', isbn=book.ISBN) }}" style="text-decoration: none; color: inherit;">
+        <img src="{{ book['Image-URL-M'] or url_for('static', filename='default_cover.jpg') }}"
+             alt="{{ book['Book-Title'] }}"
+             style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+        <p style="margin-top: 0.5em; font-weight: bold; font-size: 0.9rem;">{{ book['Book-Title'] }}</p>
+      </a>
     </div>
     {% endfor %}
   </div>
 </div>
 
-
 {% endblock %}
-
-
-
 
