@@ -1,32 +1,86 @@
 {% extends 'base.html' %}
 {% block title %}Recommend Book{% endblock %}
 
-{%block content%}
+{% block content %}
+
 <header>
-<h1 style="text-align: center; margin-top:3em;"> Discover the Book you want to read next <h1>
+  <h1 style="text-align: center; margin-top: 3em; margin-bottom: 1.5em;">Discover the Book You Want to Read Next</h1>
 </header>
-<div>
-<p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;">
-Enter the name of the book that you have read
-</p>
-<div>
-<div class= "center-container">
-<form class="search-form", method ="POST">
-<input type="text" name="query" placeholder="Enter book name...">
-<button type="submit">Search</button>
-</form>
+
+<div style="max-width: 1200px; margin: 0 auto; padding: 0 1em;">
+  {% if books is not none %}
+    {% if books %}
+      <!-- Searched Book Row -->
+      <div class="booksection" style="padding: 2em 0;">
+        <h2 style="margin-left: 1em; margin-bottom: 1em;">Searched Book</h2>
+        <div class="bookgrid" style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+            padding: 0 1em;
+        ">
+          {% set searched_book = books[0] %}
+          <a class="book-link" href="{{ url_for('show_book', isbn=searched_book.ISBN) }}" style="text-decoration: none; color: inherit;">
+            <div class="book" style="
+                width: 200px;
+                background: white;
+                border-radius: 12px;
+                padding: 15px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                text-align: center;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                border: none;
+            ">
+              <img src="{{ searched_book['Image-URL-M'] or '/static/default_cover.jpg' }}" 
+                   alt="{{ searched_book['Book-Title'] }}" 
+                   style="width: 100%; height: 250px; object-fit: cover; border-radius: 8px;">
+              <h3 style="margin-top: 0.8em; font-weight: bold; font-size: 1rem; margin-bottom: 0.3em;">{{ searched_book['Book-Title'] }}</h3>
+              <p style="font-size: 0.8rem; color: #555; margin: 0;">{{ searched_book['Book-Author'] }}</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Recommended Books Row -->
+      {% if books|length > 1 %}
+      <div class="booksection" style="padding: 2em 0; margin-top: 1em;">
+        <h2 style="margin-left: 1em; margin-bottom: 1em;">Recommended Books</h2>
+        <div class="bookgrid" style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+            padding: 0 1em;
+        ">
+          {% for book in books[1:] %}
+          <a class="book-link" href="{{ url_for('show_book', isbn=book.ISBN) }}" style="text-decoration: none; color: inherit;">
+            <div class="book" style="
+                width: 150px;
+                background: white;
+                border-radius: 12px;
+                padding: 10px;
+                box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                text-align: center;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                border: none;
+            ">
+              <img src="{{ book['Image-URL-M'] or '/static/default_cover.jpg' }}" 
+                   alt="{{ book['Book-Title'] }}" 
+                   style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px;">
+              <h4 style="margin-top: 0.5em; font-weight: bold; font-size: 0.9rem; margin-bottom: 0.2em;">{{ book['Book-Title'] }}</h4>
+              <p style="font-size: 0.8rem; color: #555; margin: 0;">{{ book['Book-Author'] }}</p>
+            </div>
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+    {% else %}
+      <p style="text-align: center; margin-top: 2rem; font-size: 1.1em; color: #555;">No books found matching your search. Try again!</p>
+    {% endif %}
+  {% else %}
+    <p style="text-align: center; margin-top: 2rem; font-size: 1.1em; color: #555;">Use the search bar above to find books.</p>
+  {% endif %}
 </div>
-
-<p style="text-align: center; font-size: 18px; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto;"> If you found Rich Dad Poor Dad by Robert Kiyosaki then<br>
-  you might find these book interesting</p>
-
-  <div class="booksection">
-    <h2>Recommended Book</h2>
-    <div class="bookgrid">
-      {% for _ in range(3) %}
-      <div class="book placeholder"></div>
-      {% endfor %}
-    </div>
-  </div>
 {% endblock %}
-
