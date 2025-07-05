@@ -10,8 +10,6 @@ def run_trainer_if_needed():
     if not os.path.exists(pkl_dir) or not os.listdir(pkl_dir):
         print("[INFO] 'pkl' directory missing or empty. Running trainer...")
         subprocess.run(['python', './model/trainer.py'], check=True)
-    else:
-        print("[INFO] 'pkl' directory found. Skipping trainer.")
 
 run_trainer_if_needed()
 
