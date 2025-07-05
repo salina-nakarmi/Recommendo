@@ -26,7 +26,7 @@ def home():
   
     def get_books_by_genre(genre_name):
         filtered = df[df['Genre'].str.contains(genre_name, case=False, na=False)]
-        return filtered.head(5).to_dict(orient='records')
+        return filtered.sample(n=5, replace=False).to_dict(orient='records') if len(filtered) >= 5 else filtered.to_dict(orient='records')
 
     fiction_books = get_books_by_genre('Fiction')
     juvenile_books = get_books_by_genre('Juvenile Fiction')
