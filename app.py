@@ -1,14 +1,29 @@
 from flask import Flask, render_template , request
 from genre_load import load_dataset, get_unique_genre
-from model.engine import recommend_books
+import os
+import subprocess
 
 app = Flask(__name__)
+
+def run_trainer_if_needed():
+    pkl_dir = './model/pkl'
+    if not os.path.exists(pkl_dir) or not os.listdir(pkl_dir):
+        print("[INFO] 'pkl' directory missing or empty. Running trainer...")
+        subprocess.run(['python', './model/trainer.py'], check=True)
+    else:
+        print("[INFO] 'pkl' directory found. Skipping trainer.")
+
+run_trainer_if_needed()
+
+
+from model.engine import recommend_books
 
 df = load_dataset()
 unique_genres = get_unique_genre(df)
 
 @app.route('/')
 def home():
+  
     def get_books_by_genre(genre_name):
         filtered = df[df['Genre'].str.contains(genre_name, case=False, na=False)]
         return filtered.head(5).to_dict(orient='records')
