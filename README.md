@@ -13,7 +13,6 @@ source mendoenv/bin/activate
 .\mendoenv\Scripts\activate
 
 pip install -r requirements.txt
-python model/trainer.py
 python app.py
 ```
 
