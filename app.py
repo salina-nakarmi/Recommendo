@@ -8,7 +8,7 @@ app = Flask(__name__)
 def run_trainer_if_needed():
     pkl_dir = './model/pkl'
     if not os.path.exists(pkl_dir) or not os.listdir(pkl_dir):
-        print("[INFO] 'pkl' directory missing or empty. Running trainer...")
+        print("[INFO] Trained data missing. Running trainer...")
         subprocess.run(['python', './model/trainer.py'], check=True)
 
 run_trainer_if_needed()
