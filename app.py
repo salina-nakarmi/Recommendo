@@ -103,14 +103,5 @@ def show_book(isbn):
         flash(f"An error occurred: {str(e)}", 'error')
         return redirect(url_for('home'))
 
-@app.route('/debug')
-def debug_recommend():
-    test_books = [
-        {'ISBN': '123', 'Book-Title': 'Test Book 1', 'Book-Author': 'Author 1', 'Image-URL-M': ''},
-        {'ISBN': '456', 'Book-Title': 'Test Book 2', 'Book-Author': 'Author 2', 'Image-URL-M': ''}
-    ]
-    return render_template('recommend.html', books=test_books)
-
-
 if __name__ == '__main__':
     app.run(debug=True)
