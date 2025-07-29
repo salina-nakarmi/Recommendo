@@ -6,13 +6,15 @@
     </a>
     </div>
     <div class = "navigate">
-        <button class="bookshelf">My BookShelf</button>
-        <button class ="about">About</button>
+      
     </div>
     </div>
     <div class="controls">
         <!-- <button class="btn" id="loginBtn">Login</button> -->
         <!-- <button class="btn" id="signupBtn">Signup</button> -->
+        <a href='{{ url_for('about') }}' style="text-decoration: none; color: inherit;" >
+          <button class="bookshelf"> About </button>
+        </a>
         <button class="theme-toggle"> <i class="fas fa-moon"></i> </button>
         <button id = "toggle-btn" class="menu-toggle">☰</button>
     </div>

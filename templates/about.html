@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}About Recommendo{% endblock %}
+
+{% block content %}
+<header>
+  <h1 style="text-align: center; margin-top: 3em; margin-bottom: 1.5em;">About Recommendo</h1>
+</header>
+
+<div style="max-width: 900px; margin: 0 auto; padding: 0 1em; font-family: Georgia, serif; color: #333; line-height: 1.6;">
+
+  <section style="margin-bottom: 2em;">
+    <h2>What is Recommendo?</h2>
+    <p>
+      Recommendo is a lightweight, content-based book recommendation system built with simplicity and privacy in mind. 
+      It uses natural language processing techniques like TF-IDF vectorization and cosine similarity to suggest books 
+      based on your favorite titles—no accounts, no databases, just straightforward recommendations.
+    </p>
+  </section>
+
+  <section style="margin-bottom: 2em;">
+    <h2>Why Recommendo?</h2>
+    <p>
+      Many recommendation systems overcomplicate things with heavy databases, user profiles, and tracking. Recommendo 
+      respects your privacy and keeps the experience focused on what matters: finding your next great read quickly and easily.
+    </p>
+  </section>
+
+  <section style="margin-bottom: 2em;">
+    <h2>How Does It Work?</h2>
+    <p>
+      When you enter a book title, Recommendo compares its metadata — genres, descriptions, authors — against a curated dataset. 
+      It then computes similarity scores and suggests the five most similar books, helping you discover titles you'll love.
+    </p>
+  </section>
+
+  <section style="margin-bottom: 2em;">
+   <h2>Who Built This?</h2>
+   <p>
+  This project was completed as part of the Year II / Semester II of the Computer Science program at Kathmandu University. 
+  It was developed by a dedicated team of five members <strong>Jebisha, Prajwal, Saksham, Salina, and Shiva</strong>, 
+  under the supervision of <strong>Mr. Suman Shrestha</strong>.
+  </p>
+
+  </section>
+
+</div>
+{% endblock %}
+

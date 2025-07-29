@@ -43,6 +43,12 @@ def home():
 def genre():
     return render_template('chooseGenre.html', genres=unique_genres)
 
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+
 @app.route('/searchbook', methods=['GET', 'POST'])
 def book():
     if request.method == 'POST':
