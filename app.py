@@ -52,8 +52,6 @@ def about():
 @app.route('/searchbook', methods=['GET', 'POST'])
 def book():
     if request.method == 'POST':
-        print(f"Total books in dataset: {len(df)}")  # Debug line
-        print(f"Sample books: {df['Book-Title'].head()}")  # Debug line
         book_name = request.form.get('query', '').strip()
         if not book_name:
             flash("Please enter a book name to search.", 'error')
