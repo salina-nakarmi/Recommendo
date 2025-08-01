@@ -17,6 +17,13 @@ body {
     overflow: hidden; 
 }
 
+.logot {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+}
+
 
 .left-section {
     display: flex;
