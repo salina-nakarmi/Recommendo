@@ -41,14 +41,15 @@
 <div class="section booksection" style="padding: 2em;">
   <h3 style="text-align: center; margin-top: 2em;">You Might Also Like</h3>
 
-  <div style="
+    <div style="
       display: flex;
-      overflow-x: auto;
-      gap: 3em;
-      padding-bottom: 1em;
-      scroll-snap-type: x mandatory;
-      padding-left: 3em;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2em;
+      padding: 1em 2em;
+      margin-top: 1.5em;
   ">
+
     {% for book in books[1:] %}
     <div style="
         flex: 0 0 auto;
