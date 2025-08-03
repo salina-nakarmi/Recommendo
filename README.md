@@ -93,5 +93,6 @@ Using Google Books API via Google Colab-[Genre and Description extractor](https:
 As the genres in the dataser needed cleaning due to
 - genre being characters' names
 - morphological variants (fiction, fictions, fictional, etc..)
+  
 So to remove them fuzzy matching was applied.
--Using fuzzywuzzy via Google Collab- [Genre Data clean](https://colab.research.google.com/drive/16iOemQ2ZHeVKQzttHnXBbzkeNXUFAfp9?usp=sharing)
+- Using fuzzywuzzy via Google Collab- [Genre Data clean](https://colab.research.google.com/drive/16iOemQ2ZHeVKQzttHnXBbzkeNXUFAfp9?usp=sharing)
