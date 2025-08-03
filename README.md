@@ -90,7 +90,7 @@ We enriched them by fetching with batch processing:
 Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1DFBB740MgnWUP-pkftQ7G4rMxWIcTqBt?usp=sharing)
 
 ## Data Cleaning Code
-As the genres in the dataser needed cleaning due to
+As the genres in the dataset needed cleaning due to
 - genre being characters' names
 - morphological variants (fiction, fictions, fictional, etc..)
   
