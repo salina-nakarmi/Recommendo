@@ -90,4 +90,8 @@ We enriched them by fetching with batch processing:
 Using Google Books API via Google Colab-[Genre and Description extractor](https://colab.research.google.com/drive/1DFBB740MgnWUP-pkftQ7G4rMxWIcTqBt?usp=sharing)
 
 ## Data Cleaning Code
+As the genres in the dataser needed cleaning due to
+- genre being characters' names
+- morphological variants (fiction, fictions, fictional, etc..)
+So to remove them fuzzy matching was applied.
 -Using fuzzywuzzy via Google Collab- [Genre Data clean](https://colab.research.google.com/drive/16iOemQ2ZHeVKQzttHnXBbzkeNXUFAfp9?usp=sharing)
