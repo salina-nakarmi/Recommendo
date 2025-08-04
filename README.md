@@ -102,21 +102,21 @@ We built a Content-Based Recommendation System that suggests books similar to a 
 
 Key Steps:
 
-### 1. Data Selection:
+#### 1. Data Selection:
  We selected only the necessary columns from the dataset:
  "ISBN", "Book-Title", "Book-Author", "Year-Of-Publication", "Publisher", "Genre", "Description"
  and removed rows with missing values and duplicates based on book titles.
 
 
-### 2. Feature Engineering:
+#### 2. Feature Engineering:
  A new column called Combined_feature was created by merging key textual information such as title, author, publisher, genre, and description into a single string. This forms the input text for vectorization.
 
 
-### 3. Vectorization with TF-IDF:
+#### 3. Vectorization with TF-IDF:
  We used TfidfVectorizer from scikit-learn to convert the combined text features into numerical vectors while removing common English stop words.
 
 
-### 4. Similarity Computation:
+#### 4. Similarity Computation:
  Pairwise cosine similarity was calculated using the cosine_similarity function from scikit-learn. This gives us a similarity score between every pair of books.
 
 
