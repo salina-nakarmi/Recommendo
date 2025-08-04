@@ -120,5 +120,5 @@ Key Steps:
  Pairwise cosine similarity was calculated using the cosine_similarity function from scikit-learn. This gives us a similarity score between every pair of books.
 
 
-### 5. Recommendation Function:
+#### 5. Recommendation Function:
  A function recommend_books(title) was created to return the top n most similar books  based on cosine similarity scores.
