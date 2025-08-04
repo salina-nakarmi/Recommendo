@@ -48,57 +48,7 @@
   }
   });
 </script>
-<!-- Sidebar in base.html or appropriate template -->
-<div id="sidebar" class="sidebar">
-  <button id="close-sidebar">×</button>
 
-    <img src="{{ url_for('static', filename='logo.png') }}"
-         alt="Project logo"
-         class="sidebar-logo">
-  <ul>
-    <li style="--i:0"><a href="#"><i class="fa-solid fa-share nodes"></i>Share this site</a></li>
-    <li style="--i:1"><a href="#"><i class="fa-solid fa-book-open"></i>This month best seller</a></li>
-    <li style="--i:2"><a href="#"><i class="fa-solid fa-heart"></i>Favourites</a></li>
-    <li style="--i:3"><a href="#"><i class="fa-solid fa-arrow-right-from-bracket"></i>Log Out</a></li>
-    <li style="--i:4"><a href="#"><i class="fa-solid fa-trash"></i>Delete Account</a></li>
-  </ul>
-  <div class="sidebar-footer">Recommendo</div>
-</div>
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sidebar   = document.getElementById("sidebar");
-  const toggleBtn = document.getElementById("toggle-btn");
-  const closeBtn  = document.getElementById("close-sidebar");
-  const items     = sidebar.querySelectorAll("ul li");
-  document.addEventListener("click", (e) => {
-    const clickInsideSidebar = sidebar.contains(e.target);
-    const clickOnToggle      = toggleBtn.contains(e.target);
-
-    if (!clickInsideSidebar && !clickOnToggle) {
-      sidebar.classList.remove("open");
-    }
-  });
-  sidebar.addEventListener("click", (e) => e.stopPropagation());
-  toggleBtn.addEventListener("click", (e) => e.stopPropagation());
-  // Restart each <li> animation whenever the sidebar opens
-  function restartAnimations() {
-    items.forEach(li => {
-      li.style.animation = "none";   // cancel current animation
-      void li.offsetWidth;           // force reflow
-      li.style.animation = "";       // restore animation rule
-    });
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("open");
-    if (sidebar.classList.contains("open")) restartAnimations();
-  });
-
-  closeBtn?.addEventListener("click", () => {
-    sidebar.classList.remove("open");
-  });
-});
-</script>
 
 </body>
 </html>
