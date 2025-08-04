@@ -96,3 +96,29 @@ As the genres in the dataset needed cleaning due to
   
 So to remove them fuzzy matching was applied.
 - Using fuzzywuzzy via Google Collab- [Genre Data clean](https://colab.research.google.com/drive/16iOemQ2ZHeVKQzttHnXBbzkeNXUFAfp9?usp=sharing)
+
+## Model Building – Content-Based Book Recommendation
+We built a Content-Based Recommendation System that suggests books similar to a given title using the cosine similarity of their textual features.
+
+Key Steps:
+
+### 1. Data Selection:
+ We selected only the necessary columns from the dataset:
+ "ISBN", "Book-Title", "Book-Author", "Year-Of-Publication", "Publisher", "Genre", "Description"
+ and removed rows with missing values and duplicates based on book titles.
+
+
+### 2. Feature Engineering:
+ A new column called Combined_feature was created by merging key textual information such as title, author, publisher, genre, and description into a single string. This forms the input text for vectorization.
+
+
+### 3. Vectorization with TF-IDF:
+ We used TfidfVectorizer from scikit-learn to convert the combined text features into numerical vectors while removing common English stop words.
+
+
+### 4. Similarity Computation:
+ Pairwise cosine similarity was calculated using the cosine_similarity function from scikit-learn. This gives us a similarity score between every pair of books.
+
+
+### 5. Recommendation Function:
+ A function recommend_books(title) was created to return the top n most similar books  based on cosine similarity scores.
