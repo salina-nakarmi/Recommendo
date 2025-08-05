@@ -20,7 +20,6 @@ python app.py
 
 This project uses the [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset) from Kaggle and enhances it by:  
 - Preprocessing the raw data (cleaning, merging, and filtering)
-- Grouping users by age segments
 - Extracting genres and descriptions using the Google Books API
 
 ---
