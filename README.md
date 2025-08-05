@@ -20,7 +20,6 @@ python app.py
 
 This project uses the [Book Recommendation Dataset](https://www.kaggle.com/datasets/arashnic/book-recommendation-dataset) from Kaggle and enhances it by:  
 - Preprocessing the raw data (cleaning, merging, and filtering)
-- Grouping users by age segments
 - Extracting genres and descriptions using the Google Books API
 
 ---
@@ -57,8 +56,6 @@ Get the original dataset from Kaggle:
 
 Extract and place the following files in the `data/raw/` directory:
 - Books.csv
-- Users.csv
-- Ratings.csv
 
 #### Step 2: Run the Script
 
@@ -91,7 +88,7 @@ Using Google Books API via Google Colab-[Genre and Description extractor](https:
 
 ## Data Cleaning Code
 As the genres in the dataset needed cleaning due to
-- genre being characters' names
+- genre being characters names
 - morphological variants (fiction, fictions, fictional, etc..)
   
 So to remove them fuzzy matching was applied.
@@ -109,7 +106,7 @@ Key Steps:
 
 
 #### 2. Feature Engineering:
- A new column called Combined_feature was created by merging key textual information such as title, author, publisher, genre, and description into a single string. This forms the input text for vectorization.
+ A new column called Combined_feature was created by merging key textual information such as title, author, publisher, genre, and description into a single string. Then it was converted to lowercase. This forms the input text for vectorization.
 
 
 #### 3. Vectorization with TF-IDF:
@@ -121,4 +118,4 @@ Key Steps:
 
 
 #### 5. Recommendation Function:
- A function recommend_books(title) was created to return the top n most similar books  based on cosine similarity scores.
+ A function recommend_books(title) was created to return the top n(5 in our case) most similar books  based on cosine similarity scores.
