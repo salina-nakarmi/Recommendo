@@ -104,7 +104,7 @@ Key Steps:
 
 #### 1. Data Selection:
  We selected only the necessary columns from the dataset:
- "ISBN", "Book-Title", "Book-Author", "Year-Of-Publication", "Publisher", "Genre", "Description"
+ "Book-Title", "Book-Author","Publisher", "Genre", "Description"
  and removed rows with missing values and duplicates based on book titles.
 
 
