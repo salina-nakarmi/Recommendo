@@ -56,8 +56,6 @@ Get the original dataset from Kaggle:
 
 Extract and place the following files in the `data/raw/` directory:
 - Books.csv
-- Users.csv
-- Ratings.csv
 
 #### Step 2: Run the Script
 
