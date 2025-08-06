@@ -32,6 +32,8 @@ You can directly use the processed file without running any preprocessing script
 
 you can store it under this 'data/final_processed.csv' 
 
+We also have done EDA of the data- [EDA](https://github.com/salina-nakarmi/Recommendo/blob/main/EDA.ipynb)
+
 The dataset was cleaned for the use of genre in frontend:
 [clean_genre.csv](https://drive.google.com/file/d/18ChS5oIPcshihKHjZjleWvL31jKcE52g/view?usp=sharing)
 
