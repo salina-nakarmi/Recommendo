@@ -41,6 +41,10 @@ body {
     gap: 10px;
 }
 
+.dark-theme h2.logot{
+  color: white !important;
+}
+
 .navigate button {
     padding: 0.7em 1em;
     cursor: pointer;
@@ -66,6 +70,17 @@ body {
     max-width: 800px; /* optional max width */
 }
 
+.dark-theme .search-box input{
+  background: #1c1c1c !important;
+  color: white !important;
+}
+
+.dark-theme input::placeholder{
+  background: #1c1c1c !important;
+  color: white !important;
+}
+
+
 .search-box input {
     width: 100%;
     padding: 0.8em 2em 0.8em 2.5em;
@@ -89,12 +104,33 @@ body {
     font-size: 1.2em;
     color: #070707;
     pointer-events: none; /* so clicks go through icon to input */
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.dark-theme .search-icon{
+  color: white !important;
+}
+
+.dark-theme button.bookshelf{
+  color: white !important;
+  background: #1c1c1c !important;
+  border: 1px solid gray !important;
+}
+
+.dark-theme button.theme-toggle{
+  color: white !important;
+  background: #1c1c1c !important;
+  border: 1px solid gray !important;
 }
 
 .controls {
     display: flex;
     gap: 1em;
 }
+
+
 
 .controls button {
     background: #DBC2AC;
@@ -136,6 +172,21 @@ body {
     aspect-ratio: 3/4;
     background: #ccc;
     border-radius: 8px;
+}
+
+.dark-theme .card {
+  background: #1c1c1c !important;
+  color: white !important;
+  border: 1px solid gray !important;
+}
+
+p.author {
+  color: #555;
+  font-size: 0.8rem;
+}
+
+.dark-theme p.author{
+  color: white !important;
 }
 
 .info-text {
