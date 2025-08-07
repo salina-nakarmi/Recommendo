@@ -79,7 +79,7 @@ This script will:
 
 ### 2. Genre + Description Extraction
 
-After preprocessing, ~14,000 books were left.
+After preprocessing, about 14,000 books were left.
 We enriched them by fetching with batch processing:
 
 - Genre
